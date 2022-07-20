@@ -1,0 +1,128 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin:0;
+}
+section{
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.container{
+
+    margin-top: 16px ;
+    margin-bottom: 16px ;
+}
+header .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 64px;
+    margin: 64px;
+}
+.top_head{
+    display: flex;
+    justify-content: space-between;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    margin-top: 0;
+    gap: 16px;
+}
+a{
+    text-decoration: none;
+    color:#e5E7EB;
+    font-size: 18px;
+}
+.theLogo{
+    font-size: 24px;
+    color: #F9FAF8;
+}
+.text_>p, .text_>h1{
+    margin: 0;
+    width: 30,33%;
+}
+.anImage{
+    width: 230px;
+    height: 150px;
+}
+.text_>h1{
+    font-size: 48px;
+}
+.text{
+    display: flex;
+    justify-content: space-between;
+}
+.text_, .anImage{
+    flex:1;
+}
+.images{
+
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+.illustration{
+ 
+    display: flex;
+    flex-direction: column;
+
+}
+.illustration>.square{
+    width: 110px;
+    height: 110px;
+    border: 1px solid rgb(22, 119, 238);
+    border-radius: 4px;
+    align-self: center;
+}
+.illustration>p{
+    width: 110px;
+}
+.container>h1{
+    text-align: center;
+}
+.quote>.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 0;
+    margin-left: 250px ;
+    margin-right: 250px;
+    justify-content: flex-start;
+}
+.author{
+    align-self: flex-end;
+    
+}
+.action>.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 128px;
+    background-color: #3882F6;
+    border-radius: 8px;width: 500px;
+    color: #F9FAF8;
+}
+.header, .footer{
+    background-color: #1F2937;
+    color:#e5E7EB;
+    font-size: 18px;
+    margin: 0;
+}
+.footer{
+    margin-bottom: 0;
+    bottom: 0;
+}
+.quote{
+    background-color: #e5E7EB;
+    color: #1F2937;
+}
+button{
+    background-color: #3882F6;
+    border-radius: 8px;
+    border: 1px solid  #e5E7EB;
+    color: #F9FAF8;
+}
