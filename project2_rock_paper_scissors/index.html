@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Hello World");
+        function getComputerChoice(){
+            let number = Math.floor(Math.random()*3)+1;
+            if (number ==1) value = "Rock";
+            else if (number ==2) value = "Paper"
+            else value = "Scissors"
+            return value;
+        }
+        console.log(getComputerChoice());
+        function singlegame(playerSelection, computerSelection = '')
+        {
+            computerSelection=getComputerChoice();
+            let winner;
+            switch (playerSelection)
+            {
+                case "Rock":
+                    if(computerSelection=="Scissors")
+                        console.log("You win. Rock beats Scissors");
+                    else if(computerSelection=="Paper")
+                        console.log("You loose. Paper beats Rock");
+                    else console.log("Match Equal");
+                    break;
+                case "Paper":
+                    if(computerSelection=="Scissors")
+                        console.log("You loose. Scissors beats Paper");
+                    else if(computerSelection=="Rock")
+                        console.log("You win. Paper beats Rock");
+                    else console.log("Match Equal");
+                    break;
+                case "Scissors":
+                    if(computerSelection=="Rock")
+                        console.log("You win. Scissors beats Rock");
+                    else if(computerSelection=="Paper")
+                        console.log("You loose. Paper beats Scissors");
+                    else console.log("Match Equal");
+                    break;
+                    default:
+                        console.log("Next time choose between Rock, Paper, or SCissors");
+
+            }
+        }
+        function playRound(playerSelection, computerSelection = '')
+        {
+            computerSelection=getComputerChoice();
+            let winner;
+            if (playerSelection.toUpperCase()=="Rock".toUpperCase() )
+            {
+                if(computerSelection=="Scissors")
+                    winner="You win. Rock beats Scissors";
+                else if(computerSelection=="Paper")
+                    winner = "You loose. Paper beats Rock";
+                else winner = "match Equal";
+            }
+            if (playerSelection.toUpperCase()=="Paper".toUpperCase() )
+            {
+                if(computerSelection=="Scissors")
+                    winner="You loose. Scissors beats Paper";
+                else if(computerSelection=="Rock")
+                    winner="You win. Paper beats Rock";
+                else winner = "match Equal";   
+            }
+            if (playerSelection.toUpperCase()=="Scissors".toUpperCase())
+            {
+                if(computerSelection=="Rock")
+                    winner = "You loose. Rock beats Scissors";
+                else if(computerSelection=="Paper")
+                    winner = "You win. Scissors beats Paper";
+                else winner = "match Equal" 
+
+            }
+            return winner; 
+        }
+        console.log(playRound("roCk", computerSelection = ''));
+        function game(){
+            let player;
+            const numOfRounds = 5;
+            let rounds = [];
+            for (let i= 0; i<numOfRounds; ++i)
+            {
+                playerSelection=prompt("what is your selection? ");
+                rounds[i]=playRound(playerSelection, "");
+            }
+            for (let i= 0; i<numOfRounds; ++i) 
+            console.log(rounds[i]);
+        }   
+        game();
+
+        //singlegame("Rock");
+       
+    </script>
+</body>
+</html>
