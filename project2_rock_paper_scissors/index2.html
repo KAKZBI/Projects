@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<script src="javascript.js"></script>-->
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button id="Rock">Rock</button>
+        <button id="Paper">Paper</button>
+        <button id="Scissors">Scissors</button>
+        <button id="btn">Click Me Too</button>
+    </div>
+    <script>
+        
+function getComputerChoice(){
+            let number = Math.floor(Math.random()*3)+1;
+            if (number ==1) value = "Rock";
+            else if (number ==2) value = "Paper"
+            else value = "Scissors"
+            return value;
+        }
+       
+        function playRound(playerSelection, computerSelection = '')
+        {
+            computerSelection=getComputerChoice();
+            let winner;
+            if (playerSelection.toUpperCase()=="Rock".toUpperCase() )
+            {
+                if(computerSelection=="Scissors")
+                    winner="You win. Rock beats Scissors";
+                else if(computerSelection=="Paper")
+                    winner = "You loose. Paper beats Rock";
+                else winner = "match Equal";
+            }
+            if (playerSelection.toUpperCase()=="Paper".toUpperCase() )
+            {
+                if(computerSelection=="Scissors")
+                    winner="You loose. Scissors beats Paper";
+                else if(computerSelection=="Rock")
+                    winner="You win. Paper beats Rock";
+                else winner = "match Equal";   
+            }
+            if (playerSelection.toUpperCase()=="Scissors".toUpperCase())
+            {
+                if(computerSelection=="Rock")
+                    winner = "You loose. Rock beats Scissors";
+                else if(computerSelection=="Paper")
+                    winner = "You win. Scissors beats Paper";
+                else winner = "match Equal" 
+
+            }
+            return winner; 
+        }
+
+        const btn = document.querySelector('#btn');
+        btn.addEventListener('click', () => {
+        alert("Hello World");
+        });
+        const rock = document.querySelector('#Rock');
+        rock.addEventListener('click', () => {
+        console.log(playRound(rock.textContent));
+        });
+        const paper = document.querySelector('#Paper');
+        paper.addEventListener('click', () => {
+        console.log(playRound(paper.textContent));
+        });
+        const scissors = document.querySelector('#Scissors');
+        scissors.addEventListener('click', () => {
+        console.log(playRound(scissors.textContent) );
+        });
+
+        
+    </script>
+</body>
+</html>
