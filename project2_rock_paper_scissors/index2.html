@@ -14,11 +14,18 @@
         <button id="Scissors">Scissors</button>
 
     </div>
+    <h3>
+        Game results
+    </h3>
+    <div>
+        <span class="playerSpan">Player : </span>
+    </div>
+    <div>
+        <span class="computerSpan">Computer : </span>
+    </div>
     <script>
         const result = document.querySelector('body');
-        const newTitle = document.createElement('h3');
-        newTitle.textContent="Game Results";
-        result.appendChild(newTitle);
+
 
 function getComputerChoice(){
             let number = Math.floor(Math.random()*3)+1;
@@ -60,12 +67,50 @@ function getComputerChoice(){
             return winner; 
         }
 
+        const playerSpan = document.querySelector('.playerSpan');
+        const computerSpan = document.querySelector('.computerSpan');
+        const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+        let playerMarks=0, computerMarks=0;
+        let resultString;
+
         const rock = document.querySelector('#Rock');
         rock.addEventListener('click', () => {
             const oneGame=document.createElement('p');
             oneGame.textContent= playRound(rock.textContent)
             oneGame.classList.add("oneGame");
             result.appendChild(oneGame);
+            console.log(playerSpan);
+            resultString = oneGame.textContent;
+            
+            if(resultString[4]==='w')
+            {
+                ++playerMarks;
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='1';
+                computerPoints.textContent='0';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);   
+            }
+            else if (resultString[4]==='l')
+            {
+                ++computerMarks;
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='0';
+                computerPoints.textContent='1';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);    
+            }else
+            {
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='0';
+                computerPoints.textContent='0';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);
+            }
         //console.log(playRound(rock.textContent));
         });
         const paper = document.querySelector('#Paper');
@@ -74,6 +119,36 @@ function getComputerChoice(){
             oneGame.textContent= playRound(paper.textContent);
             oneGame.classList.add("oneGame");
             result.appendChild(oneGame);
+            resultString = oneGame.textContent;
+            if(resultString[4]==='w')console.log(resultString[4]);
+            if(resultString[4]==='w')
+            {
+                ++playerMarks;
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='1';
+                computerPoints.textContent='0';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);   
+            }
+            else if (resultString[4]==='l')
+            {
+                ++computerMarks;
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='0';
+                computerPoints.textContent='1';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);    
+            }else
+            {
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='0';
+                computerPoints.textContent='0';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);
+            }
         //console.log(playRound(paper.textContent));
         });
         const scissors = document.querySelector('#Scissors');
@@ -82,6 +157,35 @@ function getComputerChoice(){
             oneGame.textContent= playRound(scissors.textContent)
             oneGame.classList.add("oneGame");
             result.appendChild(oneGame);
+            resultString = oneGame.textContent;
+            if(resultString[4]==='w')console.log(resultString[4]);
+            if(resultString[4]==='w')
+            {
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='1';
+                computerPoints.textContent='0';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);   
+            }
+            else if (resultString[4]==='l')
+            {
+                ++playerMarks;
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='0';
+                computerPoints.textContent='1';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);    
+            }else
+            {
+                const playerPoints = document.createElement('span');
+        const computerPoints = document.createElement('span');
+                playerPoints.textContent='0';
+                computerPoints.textContent='0';
+                playerSpan.appendChild(playerPoints);
+                computerSpan.appendChild(computerPoints);
+            }
         //console.log(playRound(scissors.textContent) );
         });
 
