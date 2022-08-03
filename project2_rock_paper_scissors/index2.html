@@ -18,7 +18,7 @@
         Game results
     </h3>
     <div>
-        <span class="playerSpan">Player : </span>
+        <span class="playerSpan">Player     :     </span>
     </div>
     <div>
         <span class="computerSpan">Computer : </span>
@@ -87,11 +87,12 @@ function getComputerChoice(){
             {
                 ++playerMarks;
                 const playerPoints = document.createElement('span');
-        const computerPoints = document.createElement('span');
+                const computerPoints = document.createElement('span');
                 playerPoints.textContent='1';
                 computerPoints.textContent='0';
                 playerSpan.appendChild(playerPoints);
                 computerSpan.appendChild(computerPoints);   
+                if(playerMarks===5) alert ("Congratulations: You are the winner");
             }
             else if (resultString[4]==='l')
             {
@@ -101,7 +102,8 @@ function getComputerChoice(){
                 playerPoints.textContent='0';
                 computerPoints.textContent='1';
                 playerSpan.appendChild(playerPoints);
-                computerSpan.appendChild(computerPoints);    
+                computerSpan.appendChild(computerPoints);   
+                if(computerMarks===5) alert ("Sorry: The computer is the winner");
             }else
             {
                 const playerPoints = document.createElement('span');
@@ -130,6 +132,7 @@ function getComputerChoice(){
                 computerPoints.textContent='0';
                 playerSpan.appendChild(playerPoints);
                 computerSpan.appendChild(computerPoints);   
+                if(playerMarks===5) alert ("Congratulations: You are the winner");
             }
             else if (resultString[4]==='l')
             {
@@ -139,7 +142,8 @@ function getComputerChoice(){
                 playerPoints.textContent='0';
                 computerPoints.textContent='1';
                 playerSpan.appendChild(playerPoints);
-                computerSpan.appendChild(computerPoints);    
+                computerSpan.appendChild(computerPoints);  
+                if(computerMarks===5) alert ("Sorry: The computer is the winner");  
             }else
             {
                 const playerPoints = document.createElement('span');
@@ -161,26 +165,29 @@ function getComputerChoice(){
             if(resultString[4]==='w')console.log(resultString[4]);
             if(resultString[4]==='w')
             {
+                ++playerMarks;
                 const playerPoints = document.createElement('span');
         const computerPoints = document.createElement('span');
                 playerPoints.textContent='1';
                 computerPoints.textContent='0';
                 playerSpan.appendChild(playerPoints);
-                computerSpan.appendChild(computerPoints);   
+                computerSpan.appendChild(computerPoints); 
+                if(playerMarks===5) alert ("Congratulations: You are the winner");  
             }
             else if (resultString[4]==='l')
             {
-                ++playerMarks;
+                ++computerMarks;
                 const playerPoints = document.createElement('span');
         const computerPoints = document.createElement('span');
                 playerPoints.textContent='0';
                 computerPoints.textContent='1';
                 playerSpan.appendChild(playerPoints);
-                computerSpan.appendChild(computerPoints);    
+                computerSpan.appendChild(computerPoints);  
+                if(computerMarks===5) alert ("Sorry: The computer is the winner");  
             }else
             {
                 const playerPoints = document.createElement('span');
-        const computerPoints = document.createElement('span');
+                const computerPoints = document.createElement('span');
                 playerPoints.textContent='0';
                 computerPoints.textContent='0';
                 playerSpan.appendChild(playerPoints);
